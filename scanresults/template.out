@@ -1,0 +1,18 @@
+# Scan results
+
+... for a fargate container
+
+## amicontained
+
+```bash
+./amicontained
+
+```
+
+## botb
+
+```bash
+./botb -metadata -find-docker -find-sockets -find-http
+
+
+```

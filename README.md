@@ -16,8 +16,8 @@ Created and collected content for BSidesMUC2020
 
 Cpabilities Comparrisson
 
-i|AWS ECS|AWS Fargate|Azure Container|Docker local|fly.io|Google Cloud|Heroku||
-|-------|-----------|---------------|------------|------|-------------------||
+|AWS ECS|AWS Fargate|Azure Container|Docker local|fly.io|Google Cloud|Heroku|
+|-------|-----------|---------------|------------|------|-------------------|
 |chown|chown|chown|chown|chown|chown||
 |dac_override|dac_override|dac_override|dac_override|dac_override|dac_override|dac_override|
 |||||dac_read_search|dac_read_search||

@@ -14,7 +14,7 @@ Created and collected content for BSidesMUC2020
 | Heroku                    | Yes           | No              | lxc-container-default     | 23                      | 47               | None                                                     | LXC           |
 
 
-Cpabilities Comparrisson
+Capabilities Comparison
 
 | AWS ECS          | AWS Fargate      | Azure Container  | Docker local     | fly.io           | Google Cloud     | Heroku           |
 |------------------|------------------|------------------|------------------|------------------|------------------|------------------|
@@ -56,3 +56,84 @@ Cpabilities Comparrisson
 |                  |                  |                  |                  | wake_alarm       | wake_alarm       | wake_alarm       |
 |                  |                  |                  |                  | block_suspend    | block_suspend    | block_suspend    |
 |                  |                  |                  |                  | audit_read       | audit_read       | audit_read       |
+
+Seccomp Filter Comparison
+
+| AWS ECS | AWS Fargate       | Azure Container   | Docker local      | fly.io | Google Cloud | Heroku            |
+|---------|-------------------|-------------------|-------------------|--------|--------------|-------------------|
+|         | MSGRCV            | MSGRCV            |                   |        |              |                   |
+|         | PTRACE            | PTRACE            |                   |        |              | PTRACE            |
+|         | SYSLOG            | SYSLOG            |                   |        |              | SYSLOG            |
+|         |                   |                   |                   |        |              | SETUID            |
+|         |                   |                   |                   |        |              | SETGID            |
+|         | SETSID            | SETSID            | SETSID            |        |              | SETSID            |
+|         |                   |                   |                   |        |              | SETREUID          |
+|         |                   |                   |                   |        |              | SETREGID          |
+|         |                   |                   |                   |        |              | SETGROUPS         |
+|         |                   |                   |                   |        |              | SETRESUID         |
+|         |                   |                   |                   |        |              | SETRESGID         |
+|         |                   |                   |                   |        |              | PERSONALITY       |
+|         | USELIB            | USELIB            | USELIB            |        |              |                   |
+|         | USTAT             | USTAT             | USTAT             |        |              |                   |
+|         | SYSFS             | SYSFS             | SYSFS             |        |              |                   |
+|         | VHANGUP           | VHANGUP           | VHANGUP           |        |              | VHANGUP           |
+|         | PIVOT_ROOT        | PIVOT_ROOT        | PIVOT_ROOT        |        |              | PIVOT_ROOT        |
+|         | _SYSCTL           | _SYSCTL           | _SYSCTL           |        |              |                   |
+|         |                   |                   |                   |        |              | CHROOT            |
+|         | ACCT              | ACCT              | ACCT              |        |              | ACCT              |
+|         | SETTIMEOFDAY      | SETTIMEOFDAY      | SETTIMEOFDAY      |        |              | SETTIMEOFDAY      |
+|         | MOUNT             | MOUNT             | MOUNT             |        |              |                   |
+|         | UMOUNT2           | UMOUNT2           | UMOUNT2           |        |              | UMOUNT2           |
+|         | SWAPON            | SWAPON            | SWAPON            |        |              | SWAPON            |
+|         | SWAPOFF           | SWAPOFF           | SWAPOFF           |        |              | SWAPOFF           |
+|         | REBOOT            | REBOOT            | REBOOT            |        |              | REBOOT            |
+|         | SETHOSTNAME       | SETHOSTNAME       | SETHOSTNAME       |        |              | SETHOSTNAME       |
+|         | SETDOMAINNAME     | SETDOMAINNAME     | SETDOMAINNAME     |        |              | SETDOMAINNAME     |
+|         | IOPL              | IOPL              | IOPL              |        |              |                   |
+|         | IOPERM            | IOPERM            | IOPERM            |        |              |                   |
+|         | CREATE_MODULE     | CREATE_MODULE     | CREATE_MODULE     |        |              |                   |
+|         | INIT_MODULE       | INIT_MODULE       | INIT_MODULE       |        |              | INIT_MODULE       |
+|         | DELETE_MODULE     | DELETE_MODULE     | DELETE_MODULE     |        |              | DELETE_MODULE     |
+|         | GET_KERNEL_SYMS   | GET_KERNEL_SYMS   | GET_KERNEL_SYMS   |        |              |                   |
+|         | QUERY_MODULE      | QUERY_MODULE      | QUERY_MODULE      |        |              |                   |
+|         | QUOTACTL          | QUOTACTL          | QUOTACTL          |        |              | QUOTACTL          |
+|         | NFSSERVCTL        | NFSSERVCTL        | NFSSERVCTL        |        |              |                   |
+|         | GETPMSG           | GETPMSG           | GETPMSG           |        |              |                   |
+|         | PUTPMSG           | PUTPMSG           | PUTPMSG           |        |              |                   |
+|         | AFS_SYSCALL       | AFS_SYSCALL       | AFS_SYSCALL       |        |              |                   |
+|         | TUXCALL           | TUXCALL           | TUXCALL           |        |              |                   |
+|         | SECURITY          | SECURITY          | SECURITY          |        |              |                   |
+|         | LOOKUP_DCOOKIE    | LOOKUP_DCOOKIE    | LOOKUP_DCOOKIE    |        |              | LOOKUP_DCOOKIE    |
+|         | CLOCK_SETTIME     | CLOCK_SETTIME     | CLOCK_SETTIME     |        |              | CLOCK_SETTIME     |
+|         | VSERVER           | VSERVER           | VSERVER           |        |              |                   |
+|         | MBIND             | MBIND             | MBIND             |        |              |                   |
+|         | SET_MEMPOLICY     | SET_MEMPOLICY     | SET_MEMPOLICY     |        |              |                   |
+|         | GET_MEMPOLICY     | GET_MEMPOLICY     | GET_MEMPOLICY     |        |              | GET_MEMPOLICY     |
+|         | KEXEC_LOAD        | KEXEC_LOAD        | KEXEC_LOAD        |        |              | KEXEC_LOAD        |
+|         | ADD_KEY           | ADD_KEY           | ADD_KEY           |        |              | ADD_KEY           |
+|         | REQUEST_KEY       | REQUEST_KEY       | REQUEST_KEY       |        |              | REQUEST_KEY       |
+|         | KEYCTL            | KEYCTL            | KEYCTL            |        |              | KEYCTL            |
+|         | MIGRATE_PAGES     | MIGRATE_PAGES     | MIGRATE_PAGES     |        |              |                   |
+|         |                   |                   |                   |        |              | FUTIMESAT         |
+|         | UNSHARE           | UNSHARE           | UNSHARE           |        |              | UNSHARE           |
+|         | MOVE_PAGES        | MOVE_PAGES        | MOVE_PAGES        |        |              | MOVE_PAGES        |
+|         | PERF_EVENT_OPEN   | PERF_EVENT_OPEN   | PERF_EVENT_OPEN   |        |              | PERF_EVENT_OPEN   |
+|         | FANOTIFY_INIT     | FANOTIFY_INIT     | FANOTIFY_INIT     |        |              | FANOTIFY_INIT     |
+|         | NAME_TO_HANDLE_AT | NAME_TO_HANDLE_AT | NAME_TO_HANDLE_AT |        |              | NAME_TO_HANDLE_AT |
+|         | OPEN_BY_HANDLE_AT | OPEN_BY_HANDLE_AT | OPEN_BY_HANDLE_AT |        |              | OPEN_BY_HANDLE_AT |
+|         | CLOCK_ADJTIME     | CLOCK_ADJTIME     | CLOCK_ADJTIME     |        |              | CLOCK_ADJTIME     |
+|         | SETNS             | SETNS             | SETNS             |        |              | SETNS             |
+|         | PROCESS_VM_READV  | PROCESS_VM_READV  | PROCESS_VM_READV  |        |              | PROCESS_VM_READV  |
+|         | PROCESS_VM_WRITEV | PROCESS_VM_WRITEV | PROCESS_VM_WRITEV |        |              | PROCESS_VM_WRITEV |
+|         | KCMP              | KCMP              | KCMP              |        |              | KCMP              |
+|         | FINIT_MODULE      | FINIT_MODULE      | FINIT_MODULE      |        |              | FINIT_MODULE      |
+|         | KEXEC_FILE_LOAD   | KEXEC_FILE_LOAD   | KEXEC_FILE_LOAD   |        |              | KEXEC_FILE_LOAD   |
+|         | BPF               | BPF               | BPF               |        |              | BPF               |
+|         | USERFAULTFD       | USERFAULTFD       | USERFAULTFD       |        |              |                   |
+|         | MEMBARRIER        | MEMBARRIER        | MEMBARRIER        |        |              |                   |
+|         | PKEY_MPROTECT     | PKEY_MPROTECT     | PKEY_MPROTECT     |        |              |                   |
+|         | PKEY_ALLOC        | PKEY_ALLOC        | PKEY_ALLOC        |        |              |                   |
+|         | PKEY_FREE         | PKEY_FREE         | PKEY_FREE         |        |              |                   |
+|         | IO_PGETEVENTS     | IO_PGETEVENTS     | RSEQ              |        |              |                   |
+|         |                   |                   |                   |        |              |                   |
+

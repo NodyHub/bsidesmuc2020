@@ -134,6 +134,7 @@ Seccomp Filter Comparison
 |         | PKEY_MPROTECT     | PKEY_MPROTECT     | PKEY_MPROTECT     |        |              |                   |
 |         | PKEY_ALLOC        | PKEY_ALLOC        | PKEY_ALLOC        |        |              |                   |
 |         | PKEY_FREE         | PKEY_FREE         | PKEY_FREE         |        |              |                   |
-|         | IO_PGETEVENTS     | IO_PGETEVENTS     | RSEQ              |        |              |                   |
+|         | IO_PGETEVENTS     | IO_PGETEVENTS     |                   |        |              |                   |
+|         |                   |                   | RSEQ              |        |              |                   |
 |         |                   |                   |                   |        |              |                   |
 

@@ -1,4 +1,4 @@
-# Build Image for amicontained
+# Build Image for amicontained and botb
 FROM golang:alpine AS build-env
 
 RUN apk --no-cache add build-base git mercurial gcc
@@ -12,7 +12,7 @@ RUN git clone https://github.com/brompwnie/botb.git
 RUN cd /src/botb && go build -o botb -ldflags "-linkmode external -extldflags -static"
 
 
-# Image: docker.io//nodyd/ami
+# Image: docker.io/nodyd/bsidesmuc2020
 FROM alpine:3.11
 
 RUN apk --no-cache add socat bash

@@ -5,7 +5,7 @@ Created and collected content for BSides Munich August 2020
 Building on last year’s explanation of container workings under the hood ([Fucking Containers - how do they work?](https://2019.bsidesmunich.org/talks/01-03_Fucking-Containers/)), we explain several techniques for breaking out of misconfigured containers/container hosts. We will discuss the most common misconfigurations (such as extensive container privileges, exposed network services, mounted sockets, internal cluster privileges) and how to test for them. For each discussed attack vector, we will show how it can be automated (and integrated into build pipelines) using a tool of choice. Finally, a comparison of the well known container execution platforms (AWS, Azure, fly.io, GCP, Heroku) will be presented.
 
 
-## Summary
+## Comparison Cloud Container hoster
 
 | Service                   | PID  Namesace | User  Namespace | AppArmor Profile/ SELinux | Available  Capabilities | Filtered Seccomp | Metadata-Service                                         | Remark        |
 |---------------------------|---------------|-----------------|---------------------------|-------------------------|------------------|----------------------------------------------------------|---------------|

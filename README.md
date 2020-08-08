@@ -1,4 +1,4 @@
-# BSides Munich August 2020
+# Pentesting Cloud Sandboxes in the wild
 Created and collected content for BSides Munich August 2020
 
 ## Abstract

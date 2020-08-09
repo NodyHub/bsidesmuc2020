@@ -4,8 +4,11 @@ Created and collected content for BSides Munich August 2020
 ## Abstract
 Building on last year’s explanation of container workings under the hood ([Fucking Containers - how do they work?](https://2019.bsidesmunich.org/talks/01-03_Fucking-Containers/)), we explain several techniques for breaking out of misconfigured containers/container hosts. We will discuss the most common misconfigurations (such as extensive container privileges, exposed network services, mounted sockets, internal cluster privileges) and how to test for them. For each discussed attack vector, we will show how it can be automated (and integrated into build pipelines) using a tool of choice. Finally, a comparison of the well known container execution platforms (AWS, Azure, fly.io, GCP, Heroku) will be presented.
 
+## Collected data
 
-## Comparison Cloud Container hoster
+The tools [genuinetools/amicontained](https://github.com/genuinetools/amicontained/) and [brompwnie/botb](https://github.com/brompwnie/botb/) have been executed on multiple cloud container runtimes. The results are summarized in the following tables. The scan output itself is collected in the sub-directoty [scanresults](scanresults/). The data collection have been performed on 06/08/2020.
+
+### Comparison Cloud Container hoster
 
 | Service                   | PID  Namesace | User  Namespace | AppArmor Profile/ SELinux | Available  Capabilities | Filtered Seccomp | Metadata-Service                                         | Remark         |
 |---------------------------|---------------|-----------------|---------------------------|-------------------------|------------------|----------------------------------------------------------|----------------|
@@ -18,7 +21,7 @@ Building on last year’s explanation of container workings under the hood ([Fuc
 | Heroku                    | Yes           | No              | lxc-container-default     | 23                      | 47               | None                                                     | LXC            |
 
 
-## Capabilities Comparison
+### Capabilities Comparison
 
 | AWS ECS          | AWS Fargate      | Azure Container Instances | Docker local     | fly.io           | Google Cloud Run | Heroku           |
 |------------------|------------------|---------------------------|------------------|------------------|------------------|------------------|
@@ -64,7 +67,7 @@ Building on last year’s explanation of container workings under the hood ([Fuc
 
 
 
-## Seccomp Filter Comparison
+### Seccomp Filter Comparison
 
 | AWS ECS | AWS Fargate       | Azure Container Instances | Docker local      | fly.io | Google Cloud Run | Heroku            |
 |---------|-------------------|---------------------------|-------------------|--------|------------------|-------------------|
